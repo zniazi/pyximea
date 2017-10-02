@@ -200,7 +200,7 @@ cdef class Xi_Camera:
         elif self._xi_image.frm == xi.XI_RGB32:
             img_array = np.asarray(<np.uint8_t[:self._xi_image.bp_size]> self._xi_image.bp).reshape((self._xi_image.height,self._xi_image.width,4))
         else:
-            raise xi.XI_Error("Not implemented.")
+            raise XI_Error("Not implemented.")
         # img_array = np.asarray(<np.uint8_t[:self._xi_image.height*self._xi_image.width,]> self._xi_image.bp).reshape((self._xi_image.height,self._xi_image.width))
         return img_array
 
